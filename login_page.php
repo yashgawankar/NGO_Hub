@@ -1,0 +1,152 @@
+<?php
+
+$host = "localhost";
+$user = "root";
+$pass = "pwdpwd";
+$db = "login_signup";
+
+if(isset($_POST['signup']))
+{
+    $conn = mysqli_connect($host,$user,$pass,$db);
+    if(!$conn)
+        echo "error";
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $username = $_POST['username'];
+    $password = $_POST['password1'];
+
+    $s = "select * from users where email = '$username'";
+    $exists = mysqli_query($conn,$s);
+    $taken = mysqli_num_rows($exists);
+    if($taken==1){
+        echo "Username already exists";
+        exit();
+    }
+    else{
+        $query = "INSERT INTO users(firstname,lastname,email,password) VALUES ('$firstname','$lastname','$username','$password')";
+        mysqli_query($conn, $query); 
+    }       
+}
+
+if(isset($_POST['login']))
+{
+    $conn1 = mysqli_connect($host,$user,$pass,$db);
+    if(!$conn1)
+        echo "error";
+    $uname = $_POST['username'];
+    $passwd = $_POST['password'];
+
+    $sql = "select * from users where email= '".$uname."'AND password= '".$passwd."'limit 1";
+
+    $result = mysqli_query($conn1,$sql);
+
+    if(mysqli_num_rows($result)==1){
+        echo "You Have Successfully Logged In";
+        exit();
+    }
+    else{
+        echo "You Have Entered Incorrect Password";
+        exit();
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style_login.css">
+    <title>Log In/Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "stylesheet" type="text/css" href="header_footer.css">
+  </head>
+
+  <!---<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>--->
+
+  <script>
+
+  function showSignUp() {
+    var su = document.querySelector (".signup_area");
+    var lg = document.querySelector (".login_area");
+    lg.style.display = "none";
+    su.style.display = "inline";
+    su.style.opacity = "1";
+  }
+  function showLogIn() {
+    var su = document.querySelector (".signup_area");
+    var lg = document.querySelector (".login_area");
+    su.style.display = "none";
+    lg.style.display = "inline";
+  }
+
+
+  </script>
+
+  <body>
+      <div id="title">
+          <h1 class = "ngo" style="font-family: 'Bungee Inline', cursive; margin-top: -5px; color: whitesmoke;">NGO HUB</h1>
+          <br />
+      </div>
+      <div class="menu">
+          <button class="b" onclick="location.href = 'file:///C:/Users/YASH/Desktop/WT_Project_Final/NGO/ngolist.html';"><i class="fa fa-user"></i> Our Noble Workers</button>
+          <button class="b" onclick="location.href = 'file:///C:/Users/YASH/Desktop/WT_Project_Final/Home_Page/home.html';"><i class="fa fa-home"></i> HOME</button>
+          <button class="b" onclick="location.href = 'file:///C:/Users/YASH/Desktop/WT_Project_Final/Stories/stories.html';"><i class="fa fa-pencil"></i>Success Stories</button>
+          <button class="b" onclick="location.href = 'WT_Project_Final/About_Us/about_us.html';">About Us</button>
+          <button class="b" onclick="location.href = 'file:///C:/Users/YASH/Desktop/WT_Project_Final/Campaigns/campaigns.html';"><i class="fa fa-lightbulb-o"></i>Campaigns</button>
+          <button class="b" onclick="location.href = 'file:///C:/Users/YASH/Desktop/WT_Project_Final/Login_SignUp/login_page.html';">Login/Sign-Up</button>
+          <button class="b" onclick="location.href = 'file:///C:/Users/YASH/Desktop/WT_Project_Final/Coming_Soon/coming_soon.html';">Coming Soon</button>
+          <button class="b" onclick="location.href = 'file:///C:/Users/YASH/Desktop/WT_Project_Final/Coming_Soon/coming_soon.html';">Why NGOs?</button>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+
+  <form class="login_area" action="login_page.php" method="post">
+
+    <h2>Log In / Sign Up </h2>
+
+    <!---<label for="email">Email Address:</label><br>--->
+    <input class="tbox" type="email" name="username" autocomplete="off" placeholder="Enter Valid Email ID" onkeyup="loginbt()"></input><br>
+    <br>
+    <!---<label for="psw">Password:</label><br>--->
+    <input class="tbox" type="password" name="password" autocomplete="off" placeholder="Enter Password" onkeyup="loginbt()"></input><br>
+    <br>
+    <input id="kmli" type="checkbox" checked="checked" name="loggedin"><span style="color:white;">Keep Me Logged In</span></input><br>
+    <br>
+    <input id="login" type="submit" name="login">Log In</button>
+
+    <a id="forgotpsw" href="#">Forgot Password?</a>
+    <br><br><br>
+    <button id="signup" href="#" type="button" onclick="showSignUp()">Sign Up</button>
+    <br><br><br>
+
+    <span class="loginopt" style="float: left" >Login Using:</span>
+                    <a href="#"><img class="logos" src="facebook.png" ></img></a>
+                    <a href="#"><img class="logos" src="twitter.png"></img></a>
+                    <a href="#"><img class="logos" src="gplus.png"></img></a>
+  </form>
+
+  <form class="signup_area" action="login_page.php" method="post">
+
+    <h2 style = "padding-left:35%;">Sign Up</h2>
+
+    <input class="tbox" name="firstname" autocomplete="off" placeholder="Enter First Name"></input><br>
+    <br>
+    <input class="tbox" name="lastname" autocomplete="off" placeholder="Enter Last Name"></input><br>
+    <br>
+    <input class="tbox" type="email" name="username" autocomplete="off" placeholder="Enter Valid Email ID" onkeyup="loginbt()"></input><br>
+    <br>
+    <input class="tbox" type="password" name="password1" autocomplete="off" placeholder="Enter Password" onkeyup="loginbt()"></input><br>
+    <br>
+    <input class="tbox" type="password" name="password2" autocomplete="off" placeholder="Confirm Password" onkeyup="loginbt()"></input><br>
+    <br><br>
+    <input type = "submit" id="createacc" name="signup" value="Create Account">
+    <br><br><br>
+    <p style = "color:white; float:left; font-size:10; padding-right: 15px;">Have an account? </p>
+    <button id="login" type="button" onclick="showLogIn()">Log In</button>
+
+  </form>
+
+  
+
+  </body>
+
+  

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline&display=swap');
+
+#title{
+    /*background-image:url(myface.jpg);*/
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+    position: absolute;
+    top: -2%;
+    left: 1%;
+    color: #000000;
+}
+
+.prof{
+    background: transparent;
+    float: right;
+    height: 50px;
+    width: 50px;
+    margin-top: 15px;
+    margin-right: 40px;
+}
+
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+  }
+
+/* Style the tab */
+.menu {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /*border: 1px solid #ccc;
+    background-color: #f1f1f1;*/
+    position: absolute;
+    left: 250px;
+    top: 2%;
+}
+
+.menu a.tb {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+    .menu button {
+        background-color: #333;
+        color: white;
+        font-size: 16px;
+        float: left;
+        text-align: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 16px 18px;
+        /*transition: 0.3s;*/
+    }
+
+    .menu button:hover {
+        background-color: forestgreen;
+    }
+
+    .menu button.active {
+        background-color: #ccc;
+    }
+
+.menu input[type=text] {
+    float: right;
+    padding: 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    border: none;
+    font-size: 17px;
+}
+
+.footer {
+    background-color: rgb(46, 46, 51);
+    color: white;
+    height: 300px;
+    font-size: 20px;
+    position: relative;
+    margin-top: 80px;
+    width:100%;
+}
+
+    .footer .f1 {
+        float: left;
+        width: 25%;
+        margin-left: 60px;
+        margin-top: 30px;
+    }
+
+    .footer .f2 {
+        float: left;
+        width: 25%;
+        margin-top: 30px;
+    }
+
+    .footer .f3 {
+        float: left;
+        width: 25%;
+        margin-top: 30px;
+    }
+
+    .footer .f4 {
+        margin-top: 30px;
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: white;
+    }
+
+        .footer a:hover {
+            color: grey;
+        }

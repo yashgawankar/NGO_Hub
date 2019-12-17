@@ -1,0 +1,144 @@
+body {
+  background-image: linear-gradient( rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("login_img2.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial;
+  background-blend-mode: multiply;
+  background-position: center center;
+}
+
+h2 {
+  font-family: cursive;
+  color: white;
+  padding-left: 70px;
+  padding-bottom: 10px;
+}
+
+form.login_area, .signup_area {
+  transition: opacity 2s ease-in;
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50.5%;
+  /*margin-right: -50%;*/
+  transform: translate(-50%, -50%)
+}
+
+.signup_area {
+  /*z-index: -1;*/
+  display: none;
+  opacity: 0;
+  transition: ;
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50.5%;
+  /*margin-right: -50%;*/
+  transform: translate(-50%, -50%)
+}
+
+#login {
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  background-color: #0cb058;
+  padding: 15px 58px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  transition: 0.5s;
+  font-size: 15px;
+}
+
+#login:hover {
+  color: white;
+  background-color: #087d34;
+  transition: background-color 0.5s;
+}
+
+.tbox {
+  border-radius: 4px;
+  width: 200px;
+  padding: 10px 70px;
+  font-size: 15px;
+  outline: none;
+  opacity: 0.5;
+  transition: 0.5s;
+  border: none;
+}
+
+.tbox:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+.tbox:focus {
+  border: 2px solid lightblue;
+  width: 250px;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.logos:hover {
+  opacity: 0.5;
+  height: 55px;
+  width: 55px;
+}
+
+.logos {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  clear: right;
+  padding: 10px;
+  transition: all 0.5s;
+}
+
+a {
+  text-decoration: none;
+}
+
+a#forgotpsw {
+  padding: 15px;
+  color: lightblue;
+  font-size: 15px;
+}
+
+a#forgotpsw:hover {
+  text-decoration: underline;
+}
+
+#signup, #createacc {
+  border-radius: 10px;
+  color: white;
+  background-color: #0698b5;
+  padding: 15px 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  transition: 0.5s;
+  font-size: 15px;
+}
+
+#signup:hover, #createacc:hover {
+  background-color: #067288;
+}
+
+.loginopt {
+  color: white;
+  font-size: 18px;
+  padding-top: 20px;
+  padding-right: 5px;
+}
+
+#kmli span{
+  color: white;
+}
+
+#kmli {
+  border: none;
+}
+
+#login, #signup, #forgotpsw {
+  font-family: Arial;
+}

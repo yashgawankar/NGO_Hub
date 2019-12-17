@@ -1,0 +1,49 @@
+.container{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.camp{
+    padding: 20px;
+    margin: 20px;
+}
+
+p{
+    width: 50%;
+    font-family: cursive;
+}
+
+#mah{
+    position: absolute;
+    top: 250px;
+    left: 55%;
+}
+
+#niv{
+    position: absolute;
+    top: 700px;
+    left: 55%;
+}
+
+body{
+    background-image: url('camp_bg.jpg');
+    color: white;
+}
+
+#scar{
+    position: absolute;
+    top: 1140px;
+    left: 55%;
+}
+
+#ching{
+    position: absolute;
+    top: 1600px;
+    left: 55%;
+}
+
+#omr{
+    position: absolute;
+    top: 2030px;
+    left: 55%;
+}
